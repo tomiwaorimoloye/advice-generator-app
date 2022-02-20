@@ -1,0 +1,110 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	/* primary colors */
+	--light-cyan: hsl(193, 38%, 86%);
+	--neon-green: hsl(150, 100%, 66%);
+
+	/* neutral colors */
+	--grayish-blue: hsl(217, 19%, 38%);
+	--dark-grayish-blue: hsl(217, 19%, 24%);
+	--bg: rgb(31, 39, 51);
+
+	/* fonts */
+	font-size: 27px;
+}
+
+body {
+	font-family: "Manrope", sans-serif;
+	min-height: 100vh;
+	background-color: var(--bg);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 15px;
+}
+
+/* quote */
+
+.quote-card {
+	position: relative;
+	max-width: 540px;
+	padding: 50px;
+	background-color: var(--dark-grayish-blue);
+	border-radius: 15px;
+	text-align: center;
+}
+
+h2.quote-id {
+	color: var(--neon-green);
+	font-size: 0.5rem;
+	text-transform: uppercase;
+	letter-spacing: 0.15rem;
+	margin-bottom: 1.1rem;
+	user-select: none;
+}
+
+/* quote content */
+
+.quote {
+	color: var(--light-cyan);
+	user-select: none;
+}
+
+.quote::before {
+	content: '"';
+}
+
+.quote::after {
+	content: '"';
+}
+
+@media screen and (max-width: 600px) {
+	.quote-card {
+		padding: 40px 25px;
+		width: 100%;
+	}
+
+	.quote {
+		font-size: 0.85rem;
+	}
+}
+
+/* divider */
+
+.divider {
+	display: block;
+	color: var(--light-cyan);
+	margin: 25px 0 10px;
+	user-select: none;
+	width: 100%;
+}
+
+/* icon */
+.icon {
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translate(-50%, 50%);
+	width: 2.4rem;
+	height: 2.4rem;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	background-color: var(--neon-green);
+	user-select: none;
+	transition: box-shadow 100ms ease;
+}
+
+/* would require a mouse */
+@media screen and (pointer: fine) {
+	.icon:hover {
+		cursor: pointer;
+		box-shadow: var(--neon-green) 0px 0px 40px;
+	}
+}
